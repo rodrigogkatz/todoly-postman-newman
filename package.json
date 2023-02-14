@@ -1,0 +1,33 @@
+{
+  "name": "todoly-postman-newman",
+  "version": "1.0.0",
+  "description": "todo.ly repository to run a postman collection directly from the command-line using node newman package and also to get the corresponding reports",
+  "main": "index.js",
+  "scripts": {
+    "test:json": "newman run collections/todoly.collection.json -e variables/todoly.environment.json -g variables/todoly.globals.json",
+    "test:report": "newman run collections/todoly.collection.json -e variables/todoly.environment.json -g variables/todoly.globals.json r- htmlextra"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigogkatz/todoly-postman-newman.git"
+  },
+  "keywords": [
+    "postman",
+    "newman",
+    "api",
+    "testing",
+    "docker",
+    "github",
+    "actions"
+  ],
+  "author": "Rodrigo G. Katz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigogkatz/todoly-postman-newman/issues"
+  },
+  "homepage": "https://github.com/rodrigogkatz/todoly-postman-newman#readme",
+  "dependencies": {
+    "newman": "^5.3.2",
+    "newman-reporter-htmlextra": "^1.22.11"
+  }
+}
