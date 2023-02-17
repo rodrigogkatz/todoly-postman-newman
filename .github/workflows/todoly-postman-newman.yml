@@ -15,5 +15,5 @@ jobs:
     - name: Create directory 
       run: mkdir reports
     - name: Docker volume creation
-      run: echo pwd
+      run: pwd
   
