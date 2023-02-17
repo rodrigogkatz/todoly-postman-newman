@@ -1,4 +1,4 @@
-name: todoly postman newman github actions
+name: Todoly, Postman, Newman, Docker & Github actions
 
 on:
   pull_request:
@@ -7,13 +7,15 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Create directory 
+    - name: Create directory for reports
       run: mkdir reports
     - name: Docker volume creation
-      run: pwd
-  
+      run: docker volume create  --name todoly-postman-newman-vol --opt type=none --opt device="/home/runner/work/todoly-postman-newman/todoly-postman-newman/reports" --opt o=bind
+    - name: Build docker image
+      run: docker build . -t todoly-postman-newman-img
+    - name: Run docker container inside the previous buildt img
+      run: docker run -v todoly-postman-newman:/newman todoly-postman-newman-img
