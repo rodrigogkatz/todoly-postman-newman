@@ -1,5 +1,7 @@
 # API Testing [todo.ly](http://todo.ly)
 
+This is a repository to run a postman collection directly from the command-line using node newman package and also to get the corresponding reports
+
 [todo.ly](http://todo.ly) exposes its data via an Application Programming Interface (API). This document is the official reference for that functionality. This API is inspired by the Twitter API.
 
 ## The API is entirely HTTP-based
@@ -45,3 +47,4 @@ CMD [ "npm", "run". "test:json" ]
 ```
 
 ### Github actions
+
