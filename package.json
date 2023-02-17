@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:json": "newman run collections/todoly.collection.json -e variables/todoly.environment.json -g variables/todoly.globals.json",
-    "test:report": "newman run collections/todoly.collection.json -e variables/todoly.environment.json -g variables/todoly.globals.json r- htmlextra"
+    "test:report": "newman run collections/todoly.collection.json -e variables/todoly.environment.json -g variables/todoly.globals.json -r htmlextra"
   },
   "repository": {
     "type": "git",
